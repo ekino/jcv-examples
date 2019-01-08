@@ -2,7 +2,8 @@
 
 Some examples using the [JCV library](https://github.com/ekino/jcv).
 
-[![GitHub license](https://img.shields.io/github/license/ekino/jcv.svg)](https://github.com/ekino/jcv-examples/blob/master/LICENSE.md)
+[![Build Status](https://travis-ci.org/ekino/jcv-examples.svg?branch=master)](https://travis-ci.org/ekino/jcv-examples)
+[![GitHub license](https://img.shields.io/github/license/ekino/jcv-examples.svg)](https://github.com/ekino/jcv-examples/blob/master/LICENSE.md)
 
 ## Example list
 
