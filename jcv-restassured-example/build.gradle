@@ -1,0 +1,40 @@
+buildscript {
+    ext {
+        springBootVersion = '2.1.1.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+sourceCompatibility = '1.8'
+
+dependencies {
+
+    compileOnly('org.projectlombok:lombok')
+    annotationProcessor('org.projectlombok:lombok')
+
+    implementation('org.springframework.boot:spring-boot-starter-web')
+
+    testImplementation('org.junit.jupiter:junit-jupiter-api:5.1.0')
+    testRuntimeOnly('org.junit.jupiter:junit-jupiter-engine:5.1.0')
+
+    testImplementation('org.springframework.boot:spring-boot-starter-test')
+    testImplementation('io.rest-assured:rest-assured:3.2.0')
+    testImplementation('org.skyscreamer:jsonassert:1.5.0')
+    testImplementation('org.hamcrest:hamcrest-junit:2.0.0.0')
+    testImplementation('com.ekino.oss.jcv:jcv-hamcrest:1.0.1')
+    testImplementation('commons-io:commons-io:2.6')
+}
+
+test {
+    useJUnitPlatform()
+}
