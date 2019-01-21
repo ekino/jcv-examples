@@ -27,9 +27,9 @@ import java.time.format.DateTimeFormatter;
 import java.util.LinkedList;
 import java.util.List;
 
-import static com.ekino.oss.jcv.assertion.hamcrest.JsonMatchers.jsonMatcher;
+import static com.ekino.oss.jcv.assertion.hamcrest.JsonMatchers.*;
 import static com.ekino.oss.jcv.core.initializer.Initializers.*;
-import static io.restassured.RestAssured.given;
+import static io.restassured.RestAssured.*;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
