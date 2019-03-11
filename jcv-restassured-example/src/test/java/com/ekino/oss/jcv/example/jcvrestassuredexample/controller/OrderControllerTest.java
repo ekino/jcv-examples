@@ -20,6 +20,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.io.IOException;
+import java.io.UncheckedIOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Paths;
 import java.time.OffsetDateTime;
@@ -44,7 +45,7 @@ class OrderControllerTest {
 
     @DisplayName("Default : Test non-extensible body without ordering in arrays")
     @Test
-    void shouldGetOrderById() throws IOException {
+    void shouldGetOrderById() {
 
         given()
             .port(serverPort)
@@ -56,7 +57,7 @@ class OrderControllerTest {
 
     @DisplayName("Test non-extensible body with strict ordering in arrays")
     @Test
-    void shouldGetOrderByIdSorted() throws IOException {
+    void shouldGetOrderByIdSorted() {
 
         given()
             .port(serverPort)
@@ -71,7 +72,7 @@ class OrderControllerTest {
 
     @DisplayName("Test extensible body")
     @Test
-    void shouldGetOrderByIdLight() throws IOException {
+    void shouldGetOrderByIdLight() {
 
         given()
             .port(serverPort)
@@ -86,7 +87,7 @@ class OrderControllerTest {
 
     @DisplayName("Test extensible body with custom matcher")
     @Test
-    void shouldGetOrderByIdCustomMatcher() throws IOException {
+    void shouldGetOrderByIdCustomMatcher() {
 
         given()
             .port(serverPort)
@@ -139,10 +140,14 @@ class OrderControllerTest {
         }
     }
 
-    private static String loadJson(String filename) throws IOException {
-        return IOUtils.resourceToString(
-            Paths.get("/controller/orders", filename).toString(),
-            StandardCharsets.UTF_8
-        );
+    private static String loadJson(String filename) {
+        try {
+            return IOUtils.resourceToString(
+                Paths.get("/controller/orders", filename).toString(),
+                StandardCharsets.UTF_8
+            );
+        } catch (IOException e) {
+            throw new UncheckedIOException(e);
+        }
     }
 }
