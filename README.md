@@ -8,3 +8,4 @@ Some examples using the [JCV library](https://github.com/ekino/jcv).
 ## Example list
 
 - [jcv-restassured-example](https://github.com/ekino/jcv-examples/tree/master/jcv-restassured-example) : REST API testing with [Rest-assured](http://rest-assured.io/) and [Spring Boot](http://spring.io/projects/spring-boot)
+- [jcv-customvalidator-example](https://github.com/ekino/jcv-examples/tree/master/jcv-customvalidator-example) : Custom validator
