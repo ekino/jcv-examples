@@ -1,0 +1,5 @@
+{
+  "id": "{#uuid#}",
+  "reference_1": "{#my_ref:REF_#}",
+  "reference_2": "{#my_ref:TEST-;8#}"
+}

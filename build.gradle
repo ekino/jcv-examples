@@ -13,5 +13,4 @@ allprojects {
 
 subprojects {
     group = 'com.ekino.oss.jcv.example'
-    version = '1.0.0-SNAPSHOT'
 }

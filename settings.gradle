@@ -9,4 +9,4 @@
 
 rootProject.name = 'jcv-examples'
 
-include 'jcv-restassured-example'
+include 'jcv-restassured-example', 'jcv-customvalidator-example'
