@@ -1,6 +1,6 @@
 buildscript {
     ext {
-        springBootVersion = '2.1.1.RELEASE'
+        springBootVersion = '2.1.4.RELEASE'
     }
     repositories {
         mavenCentral()
@@ -24,11 +24,10 @@ dependencies {
 
     implementation('org.springframework.boot:spring-boot-starter-web')
 
-    testImplementation('org.junit.jupiter:junit-jupiter-api:5.1.0')
-    testRuntimeOnly('org.junit.jupiter:junit-jupiter-engine:5.1.0')
+    testImplementation("org.junit.jupiter:junit-jupiter:$junit_jupiter_version")
 
     testImplementation('org.springframework.boot:spring-boot-starter-test')
-    testImplementation('io.rest-assured:rest-assured:3.2.0')
+    testImplementation('io.rest-assured:rest-assured:3.3.0')
     testImplementation("org.skyscreamer:jsonassert:$jsonassert_version")
     testImplementation('org.hamcrest:hamcrest:2.1')
     testImplementation("com.ekino.oss.jcv:jcv-hamcrest:$jcv_version")
