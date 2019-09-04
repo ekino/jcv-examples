@@ -7,6 +7,6 @@
  * in the user guide at https://docs.gradle.org/5.1/userguide/multi_project_builds.html
  */
 
-rootProject.name = 'jcv-examples'
+rootProject.name = "jcv-examples"
 
-include 'jcv-restassured-example', 'jcv-customvalidator-example'
+include("jcv-restassured-example", "jcv-customvalidator-example")
