@@ -1,0 +1,6 @@
+{
+  "id": "{#uuid#}",
+  "reference": "SOME_REF",
+  "shippingDate": "{#date_time_format:iso_offset_date_time#}",
+  "items": "{#array_type#}"
+}
