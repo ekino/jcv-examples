@@ -9,4 +9,4 @@
 
 rootProject.name = "jcv-examples"
 
-include("jcv-restassured-example", "jcv-customvalidator-example", "jcv-restassured-kotlin-example")
+include("jcv-restassured-example", "jcv-customvalidator-example", "jcv-restassured-kotlin-example", "jcv-customvalidator-kotlin-example")
