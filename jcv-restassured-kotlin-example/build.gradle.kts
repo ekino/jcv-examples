@@ -18,8 +18,8 @@ val jcvVersion: String by project.extra
 
 dependencies {
 
-    implementation("org.jetbrains.kotlin:kotlin-reflect")
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+    implementation(kotlin("stdlib-jdk8"))
+    implementation(kotlin("reflect"))
 
     implementation(platform("org.springframework.boot:spring-boot-dependencies:$springBootVersion"))
 
@@ -32,7 +32,6 @@ dependencies {
     testImplementation("org.skyscreamer:jsonassert:$jsonassertVersion")
     testImplementation("org.hamcrest:hamcrest:2.1")
     testImplementation("com.ekino.oss.jcv:jcv-hamcrest:$jcvVersion")
-    testImplementation("commons-io:commons-io:2.6")
 }
 
 tasks {
