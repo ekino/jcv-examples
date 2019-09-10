@@ -1,13 +1,12 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    val kotlinVersion = "1.3.50"
-    kotlin("jvm") version kotlinVersion
-    kotlin("plugin.spring") version kotlinVersion
+    kotlin("jvm")
+    kotlin("plugin.spring")
     java
     eclipse
-    id("org.springframework.boot") version "2.1.7.RELEASE"
-    id("io.spring.dependency-management") version "1.0.8.RELEASE"
+    id("org.springframework.boot")
+    id("io.spring.dependency-management")
 }
 
 val springBootVersion: String by project.extra

@@ -1,8 +1,8 @@
 plugins {
     java
     eclipse
-    id("org.springframework.boot") version "2.1.7.RELEASE"
-    id("io.spring.dependency-management") version "1.0.8.RELEASE"
+    id("org.springframework.boot")
+    id("io.spring.dependency-management")
 }
 
 val springBootVersion: String by project.extra
