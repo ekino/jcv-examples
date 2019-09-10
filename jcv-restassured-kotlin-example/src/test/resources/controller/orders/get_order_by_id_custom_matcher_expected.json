@@ -1,5 +1,0 @@
-{
-  "id": "{#uuid#}",
-  "reference": "SOME_REF",
-  "shippingDate": "{#order_shipping_date_min:2019#}"
-}
