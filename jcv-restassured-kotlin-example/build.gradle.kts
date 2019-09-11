@@ -36,7 +36,7 @@ dependencies {
 tasks {
     withType<KotlinCompile> {
         kotlinOptions {
-            freeCompilerArgs = listOf("-Xjsr305=strict", "-Xjvm-default=compatibility")
+            freeCompilerArgs = listOf("-Xjsr305=strict")
             jvmTarget = JavaVersion.VERSION_1_8.toString()
         }
     }
