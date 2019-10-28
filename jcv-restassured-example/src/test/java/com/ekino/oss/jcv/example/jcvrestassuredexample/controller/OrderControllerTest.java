@@ -3,6 +3,15 @@
  */
 package com.ekino.oss.jcv.example.jcvrestassuredexample.controller;
 
+import java.io.IOException;
+import java.io.UncheckedIOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Paths;
+import java.time.OffsetDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
+
 import com.ekino.oss.jcv.assertion.hamcrest.JsonMatcherBuilder;
 import com.ekino.oss.jcv.core.JsonValidator;
 import com.ekino.oss.jcv.core.JsonValueComparator;
@@ -18,15 +27,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.http.HttpStatus;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
-
-import java.io.IOException;
-import java.io.UncheckedIOException;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Paths;
-import java.time.OffsetDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.LinkedList;
-import java.util.List;
 
 import static com.ekino.oss.jcv.assertion.hamcrest.JsonMatchers.*;
 import static com.ekino.oss.jcv.core.initializer.Initializers.*;
@@ -102,7 +102,7 @@ class OrderControllerTest {
     }
 
     private static List<JsonValidator> customValidators() {
-        LinkedList<JsonValidator> validators = new LinkedList<>();
+        List<JsonValidator> validators = new ArrayList<>();
 
         validators.add(orderShippingDateValidator());
         validators.addAll(Validators.defaultValidators());

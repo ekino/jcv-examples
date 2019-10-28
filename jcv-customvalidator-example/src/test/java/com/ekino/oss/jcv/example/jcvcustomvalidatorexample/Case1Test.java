@@ -1,6 +1,6 @@
 package com.ekino.oss.jcv.example.jcvcustomvalidatorexample;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.ekino.oss.jcv.core.JsonValidator;
@@ -24,7 +24,7 @@ public class Case1Test {
     }
 
     private static List<JsonValidator> customValidators() {
-        LinkedList<JsonValidator> validators = new LinkedList<>();
+        List<JsonValidator> validators = new ArrayList<>();
 
         validators.add(myRefValiadtor());
         validators.addAll(Validators.defaultValidators());
