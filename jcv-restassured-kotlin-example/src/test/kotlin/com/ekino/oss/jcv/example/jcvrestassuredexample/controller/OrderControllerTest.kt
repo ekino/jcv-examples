@@ -46,28 +46,33 @@ class OrderControllerTest {
             .get(DEFAULT_ORDER_BY_ID_PATH)
             .then()
             .statusCode(HttpStatus.OK.value())
-            .body(jsonMatcher("""
-                {
-                  "id": "555cb3a5-74a6-4e33-854a-9b8c7c712b92",
-                  "reference": "SOME_REF",
-                  "createdDate": "{#date_time_format:iso_instant#}",
-                  "shippingDate": "2019-04-23T10:00:00+02:00",
-                  "items": [
+            .body(
+                jsonMatcher(
+                    // language=json
+                    """
                     {
-                      "id": "d6ecd6a5-ae6b-4eda-a944-e78f788011c4",
-                      "reference": "{#regex:^ITEM_[0-9]+$#}"
-                    },
-                    {
-                      "id": "05170f42-7972-4552-9f0d-334567109984",
-                      "reference": "ITEM_1"
-                    },
-                    {
-                      "id": "{#uuid#}",
-                      "reference": "ITEM_2"
+                      "id": "555cb3a5-74a6-4e33-854a-9b8c7c712b92",
+                      "reference": "SOME_REF",
+                      "createdDate": "{#date_time_format:iso_instant#}",
+                      "shippingDate": "2019-04-23T10:00:00+02:00",
+                      "items": [
+                        {
+                          "id": "d6ecd6a5-ae6b-4eda-a944-e78f788011c4",
+                          "reference": "{#regex:^ITEM_[0-9]+$#}"
+                        },
+                        {
+                          "id": "05170f42-7972-4552-9f0d-334567109984",
+                          "reference": "ITEM_1"
+                        },
+                        {
+                          "id": "{#uuid#}",
+                          "reference": "ITEM_2"
+                        }
+                      ]
                     }
-                  ]
-                }
-            """.trimIndent()))
+                    """.trimIndent()
+                )
+            )
     }
 
     @DisplayName("Test non-extensible body with strict ordering in arrays")
@@ -82,7 +87,9 @@ class OrderControllerTest {
             .body(
                 JsonMatcherBuilder.create()
                     .mode(JSONCompareMode.STRICT)
-                    .build("""
+                    .build(
+                        // language=json
+                        """
                         {
                           "id": "555cb3a5-74a6-4e33-854a-9b8c7c712b92",
                           "reference": "SOME_REF",
@@ -103,7 +110,8 @@ class OrderControllerTest {
                             }
                           ]
                         }
-                    """.trimIndent())
+                        """.trimIndent()
+                    )
             )
     }
 
@@ -119,14 +127,17 @@ class OrderControllerTest {
             .body(
                 JsonMatcherBuilder.create()
                     .mode(JSONCompareMode.LENIENT)
-                    .build("""
+                    .build(
+                        // language=json
+                        """
                         {
                           "id": "{#uuid#}",
                           "reference": "SOME_REF",
                           "shippingDate": "{#date_time_format:iso_offset_date_time#}",
                           "items": "{#array_type#}"
                         }
-                    """.trimIndent())
+                        """.trimIndent()
+                    )
             )
     }
 
@@ -151,13 +162,16 @@ class OrderControllerTest {
                             }
                         }
                     })
-                    .build("""
+                    .build(
+                        // language=json
+                        """
                         {
                           "id": "{#uuid#}",
                           "reference": "SOME_REF",
                           "shippingDate": "{#order_shipping_date_min:2019#}"
                         }
-                    """.trimIndent())
+                        """.trimIndent()
+                    )
             )
     }
 }

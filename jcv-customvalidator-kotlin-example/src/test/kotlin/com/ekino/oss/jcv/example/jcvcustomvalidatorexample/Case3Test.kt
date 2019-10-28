@@ -13,6 +13,7 @@ class Case3Test {
     fun `should validate json content with custom validator`() {
 
         assertThatJson(
+            // language=json
             """
             {
               "id": "fda7a233-99b9-4756-8ecc-826a1c5a9bf5",
@@ -33,6 +34,7 @@ class Case3Test {
                 }
             })
             .isValidAgainst(
+                // language=json
                 """
                 {
                   "id": "{#uuid#}",
